@@ -16,7 +16,7 @@ For example:
 python tilecutter.py ./test_res/china.png -wm -t 512 -lv 4 -max 5 -ul "67.5000000,55.77657301866757"
 ```
 
-[查看生成的瓦片](https://github.com/1993hzw/tile-cutter/tree/master/test_res/china)
+[View results 查看生成的瓦片](https://github.com/1993hzw/tile-cutter/tree/master/test_res/china)
 
 * Cut image ***图片切割***
 
@@ -24,7 +24,7 @@ python tilecutter.py ./test_res/china.png -wm -t 512 -lv 4 -max 5 -ul "67.500000
 python tilecutter.py ./test_res/lol_crop.jpg -lv 6 -ul 4575,3840
 ```
 
-[查看生成的瓦片](https://github.com/1993hzw/tile-cutter/tree/master/test_res/lol_crop)
+[View results 查看生成的瓦片](https://github.com/1993hzw/tile-cutter/tree/master/test_res/lol_crop)
 
 # Geo Util ***GEO工具类***
 
@@ -62,7 +62,7 @@ The upper left lng/lat is [67.50000000000001, 55.7765730186677]
 
 ```
 
-[查看合成的地图](https://github.com/1993hzw/tile-cutter/blob/master/test_res/wm-4-5_11-7_14.png)
+[View results 查看合成的地图](https://github.com/1993hzw/tile-cutter/blob/master/test_res/wm-4-5_11-7_14.png)
 
 # [TiledMapView for Android](https://github.com/1993hzw/TiledMapView)
 
@@ -71,7 +71,7 @@ Tiled map loader for Android , supports a variety of projections, including Web 
 ***Android瓦片地图加载，支持多种投影，包括Web墨卡托投影，经纬度直投及自定义投影等；支持定位，添加图层和覆盖物。***
 
 
-Tiles generated using the tile cutter cut above can be displayed directly in [TiledMapView] (https://github.com/1993hzw/TiledMapView). For more information, please go to [TiledMapView] (https://github.com/1993hzw/TiledMapView).
+Tiles generated using the tile cutter cut above can be displayed directly in [TiledMapView](https://github.com/1993hzw/TiledMapView). For more information, please go to [TiledMapView](https://github.com/1993hzw/TiledMapView).
 
 ***上面使用瓦片切割器生成的瓦片可以直接在[TiledMapView](https://github.com/1993hzw/TiledMapView)中显示。想要了解更多请前往[TiledMapView](https://github.com/1993hzw/TiledMapView)。***
 
