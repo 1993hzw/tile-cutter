@@ -62,8 +62,10 @@ class MapDownload:
             )
             path = os.path.join(curdir, path)
         else:
-            path = self.output
+            path = os.path.abspath(self.output)
 
+        if path.endswith(".jpg") or path.endswith(".jpeg"):
+            self.mapimg = self.mapimg.convert("RGB")
         self.mapimg.save(path)
         os.remove(self.tempfile)
 
