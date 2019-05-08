@@ -26,7 +26,7 @@ python tilecutter.py ./test_res/lol_crop.jpg -lv 6 -ul 4575,3840
 
 [View results 查看生成的瓦片](https://github.com/1993hzw/tile-cutter/tree/master/test_res/lol_crop)
 
-# Geo Util ***GEO工具类***
+# Geo Util
 
 ```python
 import geoutil  # geoutil.py
@@ -74,5 +74,12 @@ Tiled map loader for Android , supports a variety of projections, including Web 
 Tiles generated using the tile cutter cut above can be displayed directly in [TiledMapView](https://github.com/1993hzw/TiledMapView). For more information, please go to [TiledMapView](https://github.com/1993hzw/TiledMapView).
 
 ***上面使用瓦片切割器生成的瓦片可以直接在[TiledMapView](https://github.com/1993hzw/TiledMapView)中显示。想要了解更多请前往[TiledMapView](https://github.com/1993hzw/TiledMapView)。***
+
+# The developer 开发者
+
+154330138@qq.com  hzw19933@gmail.com
+
+Q&A <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9cef40e0b665e25745323941baa9f3cd89a75bba055b9922ce3779fb691ea5bc"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="TiledMapLoader交流群" title="TiledMapLoader交流群"></a>  Group ID: 885437848
+
 
 
