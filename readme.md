@@ -1,12 +1,12 @@
-# Tile cutter ***瓦片切割器***
+# Tile cutter ***瓦片切割工具***
 
 ```PowerShell
 python tilecutter.py -h
 ```
 
-Support for cutting images, cutting maps, display in tiled maps for Web Mercator projection and latitude and longitude projection.
+Cut the picture into small pieces (tiles) according to the pyramid model; support for cutting images, cutting maps, display in tiled maps for Web Mercator projection and latitude and longitude projection.
 
-***瓦片切割器，支持图片切割，地图切割，可用于Web墨卡托投影和经纬度投影的瓦片地图中显示。***
+***瓦片切割工具，按照金字塔模型把图片切成小片；支持图片切割，地图切割，可用于Web墨卡托投影和经纬度投影的瓦片地图中显示。***
 
 For example:
 
@@ -15,6 +15,10 @@ For example:
 ```PowerShell
 python tilecutter.py ./test_res/china.png -wm -t 512 -lv 4 -max 5 -ul "67.5000000,55.77657301866757"
 ```
+
+The parameter `-wm` indicates that the Web Mercator projection is used for cutting tile. If you need to use the longitude and latitude projection, modify the parameter to `-ll`.
+
+***参数`-wm`表示采用Web墨卡托平面进行切图，如果需要使用经纬度直投的切图方式则修改参数为`-ll`***
 
 [View results 查看生成的瓦片](https://github.com/1993hzw/tile-cutter/tree/master/test_res/china)
 
@@ -51,7 +55,7 @@ For example:
 ```PowerShell
 python downloadmap.py 4 5,11 7,14
 ```
-表示下载级别4下，瓦片索引从(5,11)到(7,14)的区域地图。默认地图源为谷歌地图，加上参数`-t`表示切换到天地图。
+表示下载级别4下，瓦片索引从(5,11)到(7,14)的区域地图。默认地图源为谷歌地图，加上参数`-t`表示切换到经纬度投影的天地图。
 
 After the download is completed, the starting point (ie, upper left corner) of the tile index will be output, which can be referenced when cutting the map.
 
