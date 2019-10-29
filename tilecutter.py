@@ -7,6 +7,8 @@ import os
 from PIL import Image
 import geoutil
 
+Image.MAX_IMAGE_PIXELS = None
+
 curdir = os.path.dirname(__file__)
 PROJECTION_WM = "wm"
 PROJECTION_LL = "lnglat"
