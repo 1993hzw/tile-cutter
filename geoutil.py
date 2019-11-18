@@ -1,6 +1,8 @@
 # coding=utf-8
 from __future__ import division
 import math
+from pyproj import CRS
+from pyproj import Transformer
 
 WEB_MERCATOR_COORDINATE_RANGE = (-20037508.3427892, 20037508.3427892)
 WEB_MERCATOR_LENGTH_HALF = 20037508.3427892
@@ -118,9 +120,12 @@ def out_of_china(lng, lat):
 
 def lnglat_to_webmercator(lnglat):
     localMapPoint = [0, 0]
-    localMapPoint[0] = lnglat[0] * WEB_MERCATOR_LENGTH_HALF / 180
-    localMapPoint[1] = Math.log(Math.tan((90 + lnglat[1]) * PI / 360)) / (PI / 180) * (
-            WEB_MERCATOR_LENGTH_HALF / 180)
+    crs = CRS.from_epsg(4326)
+    crsTo = CRS.from_epsg(3857)
+    transformer = Transformer.from_crs(crs, crsTo)
+    location = transformer.transform(lnglat[1], lnglat[0])
+    localMapPoint[0] = location[0]
+    localMapPoint[1] = location[1]
     return localMapPoint
 
 
@@ -171,7 +176,7 @@ def image_to_lnglat_projection(img_point, level, tilesize):
 
 
 if __name__ == "__main__":
-    lnglatWgs84 = [116.40387397, 39.91488908]
+    lnglatWgs84 = [110.4029846191406, 29.36183016586889]
     lnglatGcj02 = wgs84_to_gcj02(lnglatWgs84[0], lnglatWgs84[1])
     lnglatBd09 = gcj02_to_bd09(lnglatGcj02[0], lnglatGcj02[1])
     print("wgs84:" + str(lnglatWgs84))
@@ -191,7 +196,7 @@ if __name__ == "__main__":
     print()
     print("lngLat2WebMercatorPoint:" + str(lnglat_to_webmercator(lnglatGcj02)))
     print(
-            "WebMercatorPoint2Lnglat:" + str(
-        webmercator_to_lnglat(lnglat_to_webmercator(lnglatGcj02))))
+        "WebMercatorPoint2Lnglat:" + str(
+            webmercator_to_lnglat(lnglat_to_webmercator(lnglatGcj02))))
 
     print("lnglat_to_image:" + str(lnglat_projecion_to_image((-180, 90), 1, 256)))
